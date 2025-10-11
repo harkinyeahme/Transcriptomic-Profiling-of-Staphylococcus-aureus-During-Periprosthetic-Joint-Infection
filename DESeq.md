@@ -16,7 +16,7 @@ This repository contains the workflow, scripts, and analysis outputs for the **t
 
 ---
 
-## 🧪 Methodology
+##  Methodology
 
 ### 1. **Data Retrieval**
 Raw RNA-Seq datasets were downloaded from the NCBI SRA database using the listed accession numbers. Each dataset represents biological replicates of *S. aureus* infection models under acute and chronic conditions.
@@ -48,7 +48,7 @@ Tools used:
 
 ---
 
-## 🧠 Results Summary
+##  Results Summary
 
 After quality filtering, alignment, and differential expression testing:
 
@@ -56,7 +56,7 @@ After quality filtering, alignment, and differential expression testing:
 - No genes were found to be significantly downregulated under the defined threshold (**|log₂FC| ≥ 2, adj. p < 0.05**).  
 - Functional enrichment analysis using **ShinyGO** showed **no associated pathways** for SAOUHSC_02191 within current annotation databases.
 
-### 🔍 Interpretation
+###  Interpretation
 - The expression profile revealed limited differential activity, possibly due to the **restricted sample size and limited dataset availability** in the SRA project.  
 - The single upregulated gene, **SAOUHSC_02191**, encodes a **hypothetical protein** with no known biological function or pathway association.  
 - This suggests potential involvement in unexplored mechanisms of bacterial adaptation or persistence.  
@@ -78,7 +78,7 @@ After quality filtering, alignment, and differential expression testing:
 
 ---
 
-## 🧾 Key Output Files
+##  Key Output Files
 
 | File | Description |
 |------|--------------|
@@ -126,4 +126,4 @@ All analytical scripts are available in the `/scripts` directory:
 
 ---
 
-## 📜
+## 
