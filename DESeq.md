@@ -29,12 +29,12 @@ Tools used:
 
 ### 3. **Reference Genome and Alignment**
 - Reference genome: *Staphylococcus aureus* NCTC 8325  
-- Reads were aligned to the reference genome using **STAR** aligner with default parameters.  
-- Indexing was performed using the reference FASTA and GTF annotation files.
+- Reads were aligned to the reference genome using **STAR** aligner.  
+- Indexing was performed using the reference FASTA and GFF annotation files.
 
 ### 4. **Read Quantification**
 - Gene-level read counts were generated using **FeatureCounts**.  
-- Output: `counts.txt` containing raw counts for each gene across samples.
+- Output: `results/counts.txt` containing raw counts for each gene across samples.
 
 ### 5. **Differential Expression Analysis**
 - Conducted in **R** using the **DESeq2** package.  
@@ -82,11 +82,12 @@ After quality filtering, alignment, and differential expression testing:
 
 | File | Description |
 |------|--------------|
+| `results/upregulated.csv` | Upregulated genes |
+| `results/raw_counts.csv` | raw featurecounts of the genes |
 | `multiqc_report.html` | Combined QC report (FastQC + Fastp) |
 | `Aligned.sortedByCoord.out.bam` | STAR-aligned reads |
-| `counts.txt` | Gene count matrix (FeatureCounts output) |
+| `count.txt` | Gene count matrix (FeatureCounts output) |
 | `DESeq2_results.csv` | Differential expression results |
-| `shinygo_results.html` | Functional enrichment summary |
 
 ---
 
@@ -102,10 +103,12 @@ After quality filtering, alignment, and differential expression testing:
 
 All analytical scripts are available in the `/scripts` directory:
 
-- `qc_pipeline.sh` – Performs FastQC, Fastp, and MultiQC  
-- `alignment_pipeline.sh` – Builds genome index and aligns reads with STAR  
-- `featurecounts.sh` – Quantifies aligned reads per gene  
-- `deseq2_analysis.R` – Runs DESeq2 and generates DEG results  
+- `01_download_data.sh` - Downloads the raw reads
+- `02_qc_raw.sh` – Performs FastQC, and MultiQC for raw reads
+- `03_trim.sh` - Performs trimming of raw data and generates post trim qc report
+- `04_mapping_script..sh` – Builds genome index and aligns reads with STAR  
+- `05_featureCounts.sh` – Quantifies aligned reads per gene  
+- `06_DESeq2_script.R` – Runs DESeq2 and generates DEG results  
 
 ---
 
