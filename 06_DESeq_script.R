@@ -1,11 +1,9 @@
 #############################################
 # Differential Expression Analysis (DESeq2)
 # Project: Staphylococcus aureus (Acute vs Chronic PJI)
-# Author: Akinyemi Olanrewaju
 # Description:
 # This script performs RNA-seq differential analysis using DESeq2.
-# It includes data cleaning, normalization, visualization (volcano, heatmap, PCA),
-# and exports results safely.
+# It includes data cleaning, normalization, visualization and exports results safely.
 #############################################
 
 # --- 1. Install Required Packages ---
@@ -169,3 +167,4 @@ cat("Downregulated genes:", down_count, "\n")
 #############################################
 # END OF SCRIPT
 #############################################
+
